@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <IMI_CommonBlocks>
+            <version>1.0.0</version>
+        </IMI_CommonBlocks>
+    </modules>
+    <global>
+        <blocks>
+            <imi_commonblocks>
+                <class>IMI_CommonBlocks_Block</class>
+            </imi_commonblocks>
+        </blocks>
+        <helpers>
+            <imi_commonblocks>
+                <class>IMI_CommonBlocks_Helper</class>
+            </imi_commonblocks>
+        </helpers>
+        <models>
+            <imi_commonblocks>
+                <class>IMI_CommonBlocks_Model</class>
+            </imi_commonblocks>
+        </models>
+    </global>
+</config>

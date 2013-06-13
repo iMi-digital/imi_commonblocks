@@ -1,0 +1,17 @@
+{
+    "name": "imi/imi_commonblocks",
+    "license": "OSL-3.0",
+    "type": "magento-module",
+    "description": "Usefull blocks",
+    "homepage": "http://www.imi.de/",
+    "require": {
+        "magento-hackathon/magento-composer-installer": "*"
+    },
+    "authors":[
+        {
+            "name":"iMi digital GmbH",
+            "email":"info@imi.de"
+        }
+    ]
+}
+
