@@ -25,10 +25,7 @@
  */
 class IMI_CommonBlocks_Block_Links_Categories extends Mage_Page_Block_Template_Links
 {
-    public function getParentCategoryId()
-    {
-        return 3; // "Vileda/Products"
-    }
+    /** @method getParentCategoryId */
 
     protected function _construct()
     {
@@ -49,12 +46,16 @@ class IMI_CommonBlocks_Block_Links_Categories extends Mage_Page_Block_Template_L
         echo count($all);
     }
 
-    protected function _prepareLayout()
+    protected function _beforeToHtml()
     {
-        parent::_prepareLayout();
+        parent::_beforeToHtml();
 
         $category = Mage::getModel('catalog/category');
         $category->load($this->getParentCategoryId());
+
+        if (!$category->getId()) {
+            throw new Mage_Core_Exception(sprintf('Category id "%s" not found', $this->getParentCategoryId()));
+        }
         $children = $category->getChildrenCategories();
 
         foreach($children as $child)  { /* @var $child Mage_Catalog_Model_Category */
