@@ -1,2 +1,4 @@
-src/app/code/community/IMI/CommonBlocks     app/code/community/IMI/CommonBlocks
+src/app/code/community/IMI/CommonBlocks    app/code/community/IMI/CommonBlocks
+
+src/app/design/frontend/base/default/template/imi_commonblocks    app/design/frontend/base/default/template/imi_commonblocks
 src/app/etc/modules/*    app/etc/modules/
