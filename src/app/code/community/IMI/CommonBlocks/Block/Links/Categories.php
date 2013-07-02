@@ -39,13 +39,6 @@ class IMI_CommonBlocks_Block_Links_Categories extends Mage_Page_Block_Template_L
         ));
     }
 
-    public function getSubCategories()
-    {
-        $helper = Mage::helper('catalog/category');
-        $all = $helper->getStoreCategories();
-        echo count($all);
-    }
-
     protected function _beforeToHtml()
     {
         parent::_beforeToHtml();
