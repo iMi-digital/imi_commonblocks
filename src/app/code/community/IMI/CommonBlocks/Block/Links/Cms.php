@@ -105,7 +105,7 @@ class IMI_CommonBlocks_Block_Links_Cms extends Mage_Page_Block_Template_Links
                 continue;
             }
 
-            $foundAndEntry = true;
+            $foundAnyEntry = true;
 
             $nodeData = $nodeModel->load($node['node_id']);
 
