@@ -27,7 +27,9 @@ class IMI_CommonBlocks_Block_Links_Cms extends Mage_Page_Block_Template_Links
 {
     /** @method getParentCategoryId */
 
-    protected function _construct()
+    protected $_nodesData = null;
+
+    function _construct()
     {
         parent::_construct();
 
@@ -37,6 +39,43 @@ class IMI_CommonBlocks_Block_Links_Cms extends Mage_Page_Block_Template_Links
             Mage_Cms_Model_Page::CACHE_TAG,
             Mage_Core_Model_Store_Group::CACHE_TAG
         ));
+    }
+
+    /**
+     * Set parent node via URL identifier
+     * will then set parentNodeId
+     * @param $key
+     */
+    public function setParentNodeIdentifier($identifier)
+    {
+        $nodes = $this->getNodesData();
+        foreach($nodes as $node) {
+            if ($node['identifier'] == $identifier) {
+                $this->setParentNodeId($node['node_id']);
+                return;
+            }
+        }
+
+        Mage::logException(new Mage_Exception(sprintf('Parent node identifier "%s" not found in current store ID: %s', $key, Mage::app()->getStore()->getId())));
+    }
+
+    /**
+     * Load nodes data array
+     *
+     * @return array|null
+     */
+    protected function getNodesData()
+    {
+        if ($this->_nodesData == null) {
+            $hierachy = Mage::getModel('enterprise_cms/hierarchy_node', array(
+                'scope' => Enterprise_Cms_Model_Hierarchy_Node::NODE_SCOPE_STORE,
+                'scope_id' => Mage::app()->getStore()->getId(),
+            ))->getHeritage();
+
+            $this->_nodesData = $hierachy->getNodesData();
+        }
+
+        return $this->_nodesData;
     }
 
     /**
@@ -53,19 +92,20 @@ class IMI_CommonBlocks_Block_Links_Cms extends Mage_Page_Block_Template_Links
             Mage::logException(new Mage_Exception('Parent Node not set'));
             return $this;
         }
-        $hierarchyModel = Mage::getModel('enterprise_cms/hierarchy_node', array(
-            'scope' => Enterprise_Cms_Model_Hierarchy_Node::NODE_SCOPE_STORE,
-            'scope_id' => Mage::app()->getStore()->getId(),
-        ))->getHeritage();
 
-        $nodes = $hierarchyModel->getNodesData();
+
+        $nodes = $this->getNodesData();
 
         $nodeModel = Mage::getModel('enterprise_cms/hierarchy_node');
+
+        $foundAnyEntry = false;
 
         foreach ($nodes as $node) {
             if ($node['parent_node_id'] != $parentId) {
                 continue;
             }
+
+            $foundAndEntry = true;
 
             $nodeData = $nodeModel->load($node['node_id']);
 
@@ -77,6 +117,11 @@ class IMI_CommonBlocks_Block_Links_Cms extends Mage_Page_Block_Template_Links
             }
 
             $this->addLink($nodeData->getLabel(), $nodeData->getUrl());
+        }
+
+        if (!$foundAnyEntry) {
+            Mage::logException(new Mage_Exception(sprintf('No entries found for parent ID %s - node not in this store?', $parentId)));
+            return $this;
         }
 
         return $this;
