@@ -24,6 +24,12 @@
  */
 class IMI_CommonBlocks_Block_Product_List_Simple extends Mage_Catalog_Block_Product_List
 {
+    public function __construct()
+    {
+        parent::__construct();
+        $this->setModuleName('Mage_Catalog');
+    }
+
     /**
      * Mark this as simple view for the template
      * @return bool
