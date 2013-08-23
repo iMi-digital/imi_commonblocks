@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<config>
+
+    <tabs>
+        <local translate="label" module="imi_viledalocal">
+            <label>Vileda</label>
+            <sort_order>101</sort_order>
+        </local>
+    </tabs>
+
+    <sections>
+        <local_general translate="label">
+            <label>General</label>
+            <tab>local</tab>
+            <sort_order>100</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <groups>
+                <links translate="label">
+                    <label>Links to External Pages</label>
+                    <comment>Please double-check upper/lowercase in the link to avoid redirects</comment>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>100</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <corporate translate="label">
+                            <label>Corporate Website (Full Link)</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>100</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>The full link (example http://www.example.com/)</comment>
+                        </corporate>
+                        <facebook translate="label">
+                            <label>Facebook URL Path</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>200</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Only the part after "/" (example: "Example", will automatically create a link to http://www.facebook.com/Example)</comment>
+                        </facebook>
+                        <twitter translate="label">
+                            <label>Twitter Path</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>200</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Only the part after "/" (example: "example", will automatically create a link to http://www.twitter.com/example)</comment>
+                        </twitter>
+                        <googleplus translate="label">
+                            <label>Google Plus Path</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>300</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Only the part after "/" (example: "example", will automatically create a link to http://www.google.com/+example)</comment>
+                        </googleplus>
+                    </fields>
+                </links>
+            </groups>
+        </local_general>
+    </sections>
+</config>
