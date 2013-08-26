@@ -33,9 +33,9 @@ class IMI_CommonBlocks_Block_Links_External extends Mage_Core_Block_Template
     {
         return array(
             'corporate' => '',
-            'facebook' => 'http://www.facebook.com/',
+            'facebook' => 'https://www.facebook.com/',
             'twitter' => 'http://www.twitter.com/',
-            'google' => 'http://www.google.com/+'
+            'google' => 'https://plus.google.com/'
         );
     }
 
