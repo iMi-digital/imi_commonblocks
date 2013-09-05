@@ -62,6 +62,15 @@
                             <show_in_store>1</show_in_store>
                             <comment>Only the part after "/" (example: "example", will automatically create a link to https://plus.google.com/example)</comment>
                         </googleplus>
+                        <youtube translate="label">
+                            <label>YouTube Channel User Name</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>400</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>User Name for the YouTube channel (example: "example", will automatically create a link to http://www.youtube.com/user/example)</comment>
+                        </youtube>
                     </fields>
                 </links>
             </groups>
