@@ -26,7 +26,7 @@ class IMI_CommonBlocks_Helper_Youtube extends Mage_Core_Helper_Abstract
      */
     public function extractId($url)
     {
-        if (preg_match('/v=([a-zA-Z0-9]*)/i', $url, $result)) {
+        if (preg_match('/v=([a-zA-Z0-9_-]*)/i', $url, $result)) {
             return $result[1];
         } else {
             return false;
