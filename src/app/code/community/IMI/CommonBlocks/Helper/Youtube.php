@@ -38,6 +38,6 @@ class IMI_CommonBlocks_Helper_Youtube extends Mage_Core_Helper_Abstract
      */
     public function getEmbedLink($id)
     {
-        return '//www.youtube.com/embed/' . $id;
+        return '//www.youtube.com/embed/' . $id . '?rel=0';
     }
 }
