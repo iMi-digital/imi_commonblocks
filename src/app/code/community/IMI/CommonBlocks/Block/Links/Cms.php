@@ -93,13 +93,13 @@ class IMI_CommonBlocks_Block_Links_Cms extends Mage_Page_Block_Template_Links
             return $this;
         }
 
-
         $nodes = $this->getNodesData();
 
         $nodeModel = Mage::getModel('enterprise_cms/hierarchy_node');
 
         $foundAnyEntry = false;
 
+        $insertedNodes = array();
         foreach ($nodes as $node) {
             if ($node['parent_node_id'] != $parentId) {
                 continue;
@@ -116,6 +116,13 @@ class IMI_CommonBlocks_Block_Links_Cms extends Mage_Page_Block_Template_Links
                 continue;
             }
 
+            // make sure to add a link only once
+            if(in_array($nodeData->getLabel(), $insertedNodes))
+            {
+                continue;
+            }
+
+            $insertedNodes[] = $nodeData->getLabel();
             $this->addLink($nodeData->getLabel(), $nodeData->getUrl());
         }
 
