@@ -56,7 +56,7 @@ class IMI_CommonBlocks_Block_Links_Cms extends Mage_Page_Block_Template_Links
             }
         }
 
-        Mage::logException(new Mage_Exception(sprintf('Parent node identifier "%s" not found in current store ID: %s', $key, Mage::app()->getStore()->getId())));
+        Mage::logException(new Mage_Exception(sprintf('Parent node identifier "%s" not found in current store ID: %s', $identifier, Mage::app()->getStore()->getId())));
     }
 
     /**
