@@ -26,22 +26,11 @@ class IMI_CommonBlocks_Block_Product_List_Topsellers extends IMI_CommonBlocks_Bl
 {
     protected function _getProductCollection()
     {
-        /*$bestsellers = Mage::getResourceModel('sales/report_bestsellers_collection');
-        $bestsellers->setPeriod('month')
-            ->setDateRange('-1 month', null)
-            ->addStoreRestrictions(array(Mage::app()->getStore()->getId()));
-        $bestsellers->load();
-        $bestsellerids = array();
-        foreach($bestsellers as $bestseller) {
-            $bestsellerids[] = $bestseller->getProductId();
-        }
-        var_dump($bestsellerids);*/
-
         $bestsellers = Mage::getResourceModel('imi_commonblocks/bestsellers_collection');
 
         $bestsellers->setCategory($this->getCategory()->getId())
             ->setDays($this->getDays());
-        $bestsellers->getSelect()->limit(3,0);
+        $bestsellers->getSelect()->limit($this->getCount(),0);
         $bestsellerids = array();
         foreach($bestsellers as $row) {
             $bestsellerids[] = $row->getProductId();
@@ -51,4 +40,5 @@ class IMI_CommonBlocks_Block_Product_List_Topsellers extends IMI_CommonBlocks_Bl
         $collection->getSelect()->order('field(e.entity_id, '. implode(',',$bestsellerids) . ')');
         return $collection;
     }
+
 }

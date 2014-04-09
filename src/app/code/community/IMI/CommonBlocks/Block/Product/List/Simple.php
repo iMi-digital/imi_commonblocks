@@ -110,5 +110,12 @@ class IMI_CommonBlocks_Block_Product_List_Simple extends Mage_Catalog_Block_Prod
         return parent::_beforeToHtml();
     }
 
+    public function getCacheKeyInfo()
+    {
+        $info = parent::getCacheKeyInfo();
+        $info[] = $this->getCategory()->getId();
+        return $info;
+    }
+
 
 }
