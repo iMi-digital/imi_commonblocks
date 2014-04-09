@@ -63,14 +63,27 @@ class IMI_CommonBlocks_Block_Product_List_Simple extends Mage_Catalog_Block_Prod
         return $this->getData('count');
     }
 
+    protected function getCategory()
+    {
+        if ($this->getData('category_id') == 'current') {
+            $category = Mage::registry('current_category');
+        } else {
+            $category = Mage::getModel('catalog/category')->load($this->getData('category_id'));
+        }
+        if (!$category->getId()) {
+            throw new Mage_Exception(sprintf('Category ID "%s" not found', $this->getData('category_id')));
+        }
+        return $category;
+    }
+
+    /**
+     * @return Varien_Data_Collection_Db
+     * @throws Mage_Exception
+     * @throws Mage_Core_Exception
+     */
     protected function _getProductCollection()
     {
-        $categoryId = $this->getCategoryId();
-        $category = Mage::getModel('catalog/category')->load($categoryId);
-
-        if (!$category->getId()) {
-            throw new Mage_Exception(sprintf('Category ID "%s" not found', $categoryId));
-        }
+        $category = $this->getCategory();
 
         $collection = $category->getProductCollection();
 
@@ -80,7 +93,7 @@ class IMI_CommonBlocks_Block_Product_List_Simple extends Mage_Catalog_Block_Prod
             ->addMinimalPrice()
             ->addFinalPrice()
             ->addTaxPercents()
-            ->addUrlRewrite($categoryId);
+            ->addUrlRewrite($category->getId());
         Mage::getSingleton('catalog/product_status')->addVisibleFilterToCollection($collection);
         Mage::getSingleton('catalog/product_visibility')->addVisibleInCatalogFilterToCollection($collection);
 

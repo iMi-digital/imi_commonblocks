@@ -19,7 +19,11 @@
         <models>
             <imi_commonblocks>
                 <class>IMI_CommonBlocks_Model</class>
+                <resourceModel>imi_commonblocks_resource</resourceModel>
             </imi_commonblocks>
+            <imi_commonblocks_resource>
+                <class>IMI_CommonBlocks_Model_Resource</class>
+            </imi_commonblocks_resource>
         </models>
     </global>
 </config>
