@@ -14,10 +14,16 @@
  * @category IMI
  * @package IMI_CommonBlocks
  */
+
+$content = $this->getChildHtml();
+
+if ($content == '') {
+    return;
+}
 ?>
 <div class="captionized">
     <h3><?php echo $this->getTitle() ?></h3>
     <div class="content">
-        <?php echo $this->getChildHtml(); ?>
+        <?php echo $content ?>
     </div>
 </div>

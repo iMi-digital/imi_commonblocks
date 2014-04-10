@@ -103,13 +103,6 @@ class IMI_CommonBlocks_Block_Product_List_Simple extends Mage_Catalog_Block_Prod
         return $collection;
     }
 
-    protected function _beforeToHtml()
-    {
-        $this->_getProductCollection()->load();
-
-        return parent::_beforeToHtml();
-    }
-
     public function getCacheKeyInfo()
     {
         $info = parent::getCacheKeyInfo();

@@ -37,7 +37,9 @@ class IMI_CommonBlocks_Block_Product_List_Topsellers extends IMI_CommonBlocks_Bl
         }
         $collection = parent::_getProductCollection();
         $collection->addFieldToFilter('entity_id', array('in' => $bestsellerids));
-        $collection->getSelect()->order('field(e.entity_id, '. implode(',',$bestsellerids) . ')');
+        if (count($bestsellerids) > 0) {
+            $collection->getSelect()->order('field(e.entity_id, '. implode(',',$bestsellerids) . ')');
+        }
         return $collection;
     }
 
