@@ -38,7 +38,7 @@ class IMI_CommonBlocks_Model_Config_Source_Category
             'value' => ''
         );
         foreach ($collection as $category) {
-            $name = str_repeat('--', $category->getLevel() - 1) . ' ' .$category->getName();
+            $name = str_repeat('--', $category->getLevel() ) . ' ' .$category->getName();
             $options[] = array(
                 'label' => $name,
                 'value' => $category->getId()
