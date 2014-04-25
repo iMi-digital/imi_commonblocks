@@ -24,6 +24,25 @@
  */
 class IMI_CommonBlocks_Block_Product_List_Topsellers extends IMI_CommonBlocks_Block_Product_List_Simple
 {
+
+    /**
+     * @return int|mixed Number of days to consider
+     */
+    public function getDays()
+    {
+        if ($this->getData('days')) {
+            return $this->getData('days');
+        } else {
+            return Mage::getModel('imi_commonblocks/config')->getDays();
+        }
+    }
+
+    /**
+     * Get bestsellers
+     *
+     * @return Mage_Eav_Model_Entity_Collection_Abstract|Varien_Data_Collection_Db
+     * @throws Mage_Exception
+     */
     protected function _getProductCollection()
     {
         $bestsellers = Mage::getResourceModel('imi_commonblocks/bestsellers_collection');
@@ -35,6 +54,7 @@ class IMI_CommonBlocks_Block_Product_List_Topsellers extends IMI_CommonBlocks_Bl
         foreach($bestsellers as $row) {
             $bestsellerids[] = $row->getProductId();
         }
+
         $collection = parent::_getProductCollection();
         $collection->addFieldToFilter('entity_id', array('in' => $bestsellerids));
         if (count($bestsellerids) > 0) {

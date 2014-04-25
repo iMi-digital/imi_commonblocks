@@ -26,4 +26,11 @@
             </imi_commonblocks_resource>
         </models>
     </global>
+    <default>
+        <local_general>
+            <favorites>
+                <automatic_days>90</automatic_days>
+            </favorites>
+        </local_general>
+    </default>
 </config>

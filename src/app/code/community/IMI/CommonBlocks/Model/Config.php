@@ -31,4 +31,23 @@ class IMI_CommonBlocks_Model_Config {
         return $linkpart;
     }
 
+    public function getFavoritesCategory()
+    {
+        return Mage::getStoreConfig('local_general/favorites/category');
+    }
+
+    public function getAutomatic()
+    {
+        return Mage::getStoreConfig('local_general/favorites/automatic');
+    }
+
+    public function getDays()
+    {
+        $days = Mage::getStoreConfig('local_general/favorites/automatic_days');
+        if ($days) {
+            $days = 90;
+        }
+        return $days;
+    }
+
 }

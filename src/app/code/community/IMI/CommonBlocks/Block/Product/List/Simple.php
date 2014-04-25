@@ -67,6 +67,12 @@ class IMI_CommonBlocks_Block_Product_List_Simple extends Mage_Catalog_Block_Prod
     {
         if ($this->getData('category_id') == 'current') {
             $category = Mage::registry('current_category');
+        } elseif ($this->getData('category_id') == '') {
+            if ($favoritesCategoryId = Mage::getModel('imi_commonblocks/config')->getFavoritesCategory()) {
+                $category = Mage::getModel('catalog/category')->load($favoritesCategoryId);
+            } else {
+                $category = Mage::registry('current_category');
+            }
         } else {
             $category = Mage::getModel('catalog/category')->load($this->getData('category_id'));
         }
@@ -98,7 +104,7 @@ class IMI_CommonBlocks_Block_Product_List_Simple extends Mage_Catalog_Block_Prod
         Mage::getSingleton('catalog/product_visibility')->addVisibleInCatalogFilterToCollection($collection);
 
 
-        $collection->setPageSize($this->getCount()); /** TODO: make size configurable  */
+        $collection->setPageSize($this->getCount());
 
         return $collection;
     }
