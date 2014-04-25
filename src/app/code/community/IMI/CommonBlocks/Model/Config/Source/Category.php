@@ -34,7 +34,7 @@ class IMI_CommonBlocks_Model_Config_Source_Category
         $options = array();
 
         $options[] = array(
-            'label' => Mage::helper('adminhtml')->__('-- Please Select a Category --'),
+            'label' => Mage::helper('adminhtml')->__('-- Use current category --'),
             'value' => ''
         );
         foreach ($collection as $category) {
