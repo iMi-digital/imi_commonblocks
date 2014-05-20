@@ -99,7 +99,7 @@ class IMI_CommonBlocks_Block_Product_List_Simple extends Mage_Catalog_Block_Prod
             ->addMinimalPrice()
             ->addFinalPrice()
             ->addTaxPercents()
-            ->addUrlRewrite($category->getId());
+            ->addUrlRewrite();
         Mage::getSingleton('catalog/product_status')->addVisibleFilterToCollection($collection);
         Mage::getSingleton('catalog/product_visibility')->addVisibleInCatalogFilterToCollection($collection);
 
