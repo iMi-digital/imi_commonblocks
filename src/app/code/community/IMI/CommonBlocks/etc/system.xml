@@ -110,14 +110,13 @@
                             <depends><automatic>1</automatic></depends>
                         </automatic_days>
                         <category translate="label">
-                            <label>Category with static products</label>
+                            <label>Category to use</label>
                             <frontend_type>select</frontend_type>
                             <source_model>imi_commonblocks/config_source_category</source_model>
                             <sort_order>300</sort_order>
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
-                            <depends><automatic>0</automatic></depends>
                         </category>
                     </fields>
                 </favorites>
