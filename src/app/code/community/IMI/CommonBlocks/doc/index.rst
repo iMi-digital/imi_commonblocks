@@ -21,6 +21,18 @@ Uses the standard template which should include something like:
 
    $simpleView = $this->getIsSimpleView();  // simplified view
 
+imi_commonblocks/topsellers
+---------------------------
+
+Fetches the top sold products for the configured category.
+The top sellers are fetched directly from the orders. No refresh of backend statistics is necessary.
+The block is cached in the block cache for 24 hours (theme specific).
+
+imi_commonblocks/dual
+---------------------
+
+Allows switching between the simple product list (products of a category) and the topsellers via backend configuration
+Local > Advanced > Topsellers / Favorites.
 
 imi_commonblocks/subcategories
 ------------------------------
