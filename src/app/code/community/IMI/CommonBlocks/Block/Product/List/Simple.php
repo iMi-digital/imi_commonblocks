@@ -65,7 +65,7 @@ class IMI_CommonBlocks_Block_Product_List_Simple extends Mage_Catalog_Block_Prod
 
     protected function getCategory()
     {
-        if ($this->getData('category_id') == 'current' || $this->getData('category_id') == '') {
+        if ($this->getData('category_id') == 'current') {
             $category = Mage::registry('current_category');
         } elseif ($this->getData('category_id') == '') {
             if ($favoritesCategoryId = Mage::getModel('imi_commonblocks/config')->getFavoritesCategory()) {
