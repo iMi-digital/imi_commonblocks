@@ -44,9 +44,6 @@ class IMI_CommonBlocks_Model_Config {
     public function getDays()
     {
         $days = Mage::getStoreConfig('local_general/favorites/automatic_days');
-        if ($days) {
-            $days = 90;
-        }
         return $days;
     }
 

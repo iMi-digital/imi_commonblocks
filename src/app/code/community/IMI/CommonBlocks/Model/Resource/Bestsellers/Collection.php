@@ -76,8 +76,9 @@ class IMI_CommonBlocks_Model_Resource_Bestsellers_Collection extends Mage_Sales_
         $this->getSelect()->where('cp.category_id = ' . $this->getCategory());
         $this->getSelect()->where('cp.store_id = ' . Mage::app()->getStore()->getId());
         $this->getSelect()->where('main_table.created_at > (NOW() - INTERVAL ' . $this->getDays() . ' DAY)');
+        $this->getSelect()->where('main_table.store_id = ' . Mage::app()->getStore()->getId());
         $this->getSelect()->group('main_table.product_id');
-        $this->addExpressionFieldToSelect('counter', 'COUNT({{main_table.product_id}})', 'main_table.product_id');
+        $this->addExpressionFieldToSelect('counter', 'SUM({{main_table.qty_ordered}})', 'main_table.qty_ordered');
         $this->getSelect()->order('counter DESC');
         return $this;
     }
