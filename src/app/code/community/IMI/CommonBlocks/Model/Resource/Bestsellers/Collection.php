@@ -49,7 +49,6 @@ class IMI_CommonBlocks_Model_Resource_Bestsellers_Collection extends Mage_Sales_
         return $this;
     }
 
-
     /**
      * @return int
      */
