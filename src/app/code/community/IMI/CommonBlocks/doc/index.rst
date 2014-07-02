@@ -53,3 +53,21 @@ The block has to be inserted on those pages where the sub categories shall be vi
         <block type="imi_commonblocks/subcategories" name="category.products.subcategories" as="subcategories"
                template="catalog/category/subcategories.phtml"/>
     </reference>
+
+imi_commonblocks/gatracking
+---------------------------
+
+A block which displays Google Analytics Tracking code.
+
+.. code::php
+
+    <?php echo $this->getChildHtml('gatracking') ?>
+
+The block has to be inserted on product detail reseller block, to pass parameters of shown product
+
+.. code::xml
+
+     <reference name="product.resellers">
+            <block type="imi_commonblocks/gatracking" name="catalog.products.gatracking" as="gatracking"
+                   template="catalog/product/view/gatracking.phtml"/>
+     </reference>
