@@ -80,6 +80,15 @@
                             <show_in_store>1</show_in_store>
                             <comment>User Name for the Instagram Page (example: "example", will automatically create a link to http://instagram.com/example)</comment>
                         </instagram>
+                        <pinterest translate="label">
+                            <label>Pinterest User Name</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>500</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Only the part after "/" (example: "example", will automatically create a link to http://www.pinterest.com/example)</comment>
+                        </pinterest>
                     </fields>
                 </links>
                 <favorites>
