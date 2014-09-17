@@ -38,7 +38,8 @@ class IMI_CommonBlocks_Block_Links_External extends Mage_Core_Block_Template
             'googleplus' => 'https://plus.google.com/',
             'youtube' => 'http://www.youtube.com/user/',
             'instagram' => 'http://instagram.com/',
-            'pinterest' => 'https://www.pinterest.com/'
+            'pinterest' => 'https://www.pinterest.com/',
+	        'vileda_home' => ''
         );
     }
 
