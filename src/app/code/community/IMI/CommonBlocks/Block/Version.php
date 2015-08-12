@@ -35,15 +35,21 @@ class IMI_CommonBlocks_Block_Version extends Mage_Core_Block_Template
      */
     protected function detectVersion()
     {
-        $result = '?';
-
         $cache = Mage::app()->getCache();
         if ($cache->load('imi_commonblocks_version')) {
             $result = $cache->load(self::CACHE_KEY);
         } else {
             if (file_exists($this->getVersionFile())) {
                 $result = file_get_contents($this->getVersionFile());
-                $result = trim($result );
+                $result = trim($result);
+            } else {
+                exec('git describe', $output);
+                $result = trim(implode(' ', $output));
+                if ($result != '') {
+                    $result = 'GIT: ' . $result;
+                } else {
+                    $result = '?';
+                }
             }
             $cache->save($result, self::CACHE_KEY, array(Mage_Core_Model_Config::CACHE_TAG));
         }
