@@ -3,18 +3,30 @@
  * iMi Magento Module
  *
  * NOTICE OF LICENSE
+
+ * This source file is subject to the Open Software License (OSL 3.0)
+ * which is available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/osl-3.0.php
  *
- * This source file is subject of iMi.
- * You may not be allowed to change the sources
- * without authorization of iMi digital GmbH.
- *
- * @copyright  Copyright (c) 2013 iMi digital GmbH (http://www.iMi.de)
+ * @copyright  Copyright (c) 2013-2015 iMi digital GmbH (http://www.iMi.de)
  * @author iMi digital GmbH <info@iMi.de>
- * @license proprietary
+ * @license OSL-3.0
  * @category IMI
  * @package IMI_CommonBlocks
  */
 
+/**
+ * Outputs current system version. Detection priority
+ *
+ * 1) File ../VERSION (to be filled from your deploy script)
+ * 2) output of git describe
+ *
+ * If developer mode is on, also the time of the most recent cache clearing is shown.
+ *
+ * @category IMI
+ * @package IMI_CommonBlocks
+ * @author iMi digital GmbH <info@iMi.de>
+ */
 class IMI_CommonBlocks_Block_Version extends Mage_Core_Block_Template
 {
     const CACHE_KEY = 'imi_commonblocks_version';

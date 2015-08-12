@@ -1,6 +1,9 @@
 IMI_CommonBlocks
 ====
 
+In addition to the following blocks, the config sections `local_general` and `local_advanced` are created in the system
+configuration.
+
 imi_commonblocks/links_categories
 ---------------------------------
 

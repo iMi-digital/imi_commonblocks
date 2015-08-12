@@ -1,5 +1,4 @@
 <?php
-
 /**
  * iMi Magento Module
  *
@@ -9,7 +8,7 @@
  * which is available through the world-wide-web at this URL:
  * http://opensource.org/licenses/osl-3.0.php
  *
- * @copyright  Copyright (c) 2013 iMi digital GmbH (http://www.iMi.de)
+ * @copyright  Copyright (c) 2013-2015 iMi digital GmbH (http://www.iMi.de)
  * @author iMi digital GmbH <info@iMi.de>
  * @license OSL-3.0
  * @category IMI
