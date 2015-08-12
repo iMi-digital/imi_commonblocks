@@ -4,8 +4,9 @@
         <IMI_CommonBlocks>
             <active>true</active>
             <codePool>community</codePool>
-            <depends>
-                <Enterprise_Cms/> <!-- only for IMI_CommonBlocks_Block_Links_Cms -->
+            <depends> 
+<!-- only for IMI_CommonBlocks_Block_Links_Cms -->
+<!--                <Enterprise_Cms/> -->
                 <Mage_Catalog/>
             </depends>
         </IMI_CommonBlocks>
