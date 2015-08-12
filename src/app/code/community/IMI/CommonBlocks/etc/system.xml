@@ -2,8 +2,8 @@
 <config>
 
     <tabs>
-        <local translate="label" module="imi_viledalocal">
-            <label>Vileda</label>
+        <local translate="label" module="imi_commonblocks">
+            <label>Custom Configuration</label>
             <sort_order>101</sort_order>
         </local>
     </tabs>

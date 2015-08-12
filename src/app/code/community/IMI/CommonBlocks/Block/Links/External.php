@@ -86,11 +86,11 @@ class IMI_CommonBlocks_Block_Links_External extends Mage_Core_Block_Template
      *
      * @param $code
      * @return string
-     * @throws IMI_ViledaLocal_Exception
+     * @throws IMI_CommonBlocks_Exception
      */
     public function getLink($code) {
         if (!$this->hasLink($code)) {
-            throw new IMI_ViledaLocal_Exception('No link configured. Check hasLink first!');
+            throw new IMI_CommonBlocks_Exception('No link configured. Check hasLink first!');
         }
         $map = $this->getUrlMap();
         return $map[$code] . Mage::getSingleton('imi_commonblocks/config')->getExternalLinkPart($code);
