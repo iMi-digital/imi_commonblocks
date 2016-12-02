@@ -89,7 +89,16 @@
                             <show_in_store>1</show_in_store>
                             <comment>Only the part after "/" (example: "example", will automatically create a link to http://www.pinterest.com/example)</comment>
                         </pinterest>
-                        <vileda_home translate="label">
+                        <linkedin translate="label">
+                            <label>LinkedIn Path</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>650</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Only the part after "/" (example: "company/example", will automatically create a link to http://www.linkedin.com/company/example)</comment>
+                        </linkedin>
+                        <external_page translate="label">
                             <label>External Page (Full Link)</label>
                             <frontend_type>text</frontend_type>
                             <sort_order>700</sort_order>
@@ -97,7 +106,7 @@
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
                             <comment>The full link (example http://www.example.com/)</comment>
-                        </vileda_home>
+                        </external_page>
                     </fields>
                 </links>
                 <favorites>
