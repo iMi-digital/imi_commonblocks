@@ -98,6 +98,15 @@
                             <show_in_store>1</show_in_store>
                             <comment>Only the part after "/" (example: "company/example", will automatically create a link to http://www.linkedin.com/company/example)</comment>
                         </linkedin>
+                        <xing translate="label">
+                            <label>Xing</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>675</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Only the part after "/" (example: "companies/example", will automatically create a link to http://www.xing.com/companies/example)</comment>
+                        </xing>
                         <external_page translate="label">
                             <label>External Page (Full Link)</label>
                             <frontend_type>text</frontend_type>
